@@ -52,7 +52,7 @@ class MyDashBoard extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   BottomNavyBarItem(
-                    icon: Icon(Icons.account_balance_wallet_sharp),
+                    icon: Icon(Icons.account_balance_wallet_outlined),
                     title: Text(
                       'Wallet ',
                     ),
@@ -61,7 +61,7 @@ class MyDashBoard extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   BottomNavyBarItem(
-                    icon: Icon(Icons.price_change),
+                    icon: Icon(Icons.redeem_outlined),
                     title: Text(
                       'Gold Points ',
                     ),
@@ -70,7 +70,7 @@ class MyDashBoard extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   BottomNavyBarItem(
-                    icon: Icon(Icons.person),
+                    icon: Icon(Icons.perm_identity_outlined),
                     title: Text('Profile'),
                     activeColor: Colors.blue,
                     inactiveColor: _inactiveColor,
