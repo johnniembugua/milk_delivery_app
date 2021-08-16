@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:milk_delivery/pages/add/add_page.dart';
+import 'package:milk_delivery/pages/GoldPoints/gold_points.dart';
+import 'package:milk_delivery/pages/account/account_page.dart';
+
+import 'package:milk_delivery/pages/calendar/calendar.dart';
 import 'package:milk_delivery/pages/dashboard/dashboard_controller.dart';
 import 'package:milk_delivery/pages/home/home_page.dart';
-import 'package:milk_delivery/pages/messages/messages_page.dart';
-import 'package:milk_delivery/pages/users/users_page.dart';
+
+import 'package:milk_delivery/pages/wallet/wallet_page.dart';
 
 import '../../navigation/custom_animated_bottom_bar.dart';
 
-class MyDashBoard extends StatefulWidget {
-  @override
-  _MyDashBoardState createState() => _MyDashBoardState();
-}
-
-class _MyDashBoardState extends State<MyDashBoard> {
-  final _inactiveColor = Colors.grey;
+class MyDashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _inactiveColor = Colors.grey;
     return GetBuilder<DashBoardController>(
         builder: (controller) => Scaffold(
               body: SafeArea(
@@ -24,9 +22,10 @@ class _MyDashBoardState extends State<MyDashBoard> {
                 index: controller.tabIndex,
                 children: [
                   HomePage(),
-                  UsersPage(),
-                  MessagesPage(),
-                  AddPage(),
+                  CalendarPage(),
+                  WalletPage(),
+                  GoldPoints(),
+                  AccountPage(),
                 ],
               )),
               bottomNavigationBar: CustomAnimatedBottomBar(
@@ -39,31 +38,40 @@ class _MyDashBoardState extends State<MyDashBoard> {
                 onItemSelected: controller.changeTabIndex,
                 items: <BottomNavyBarItem>[
                   BottomNavyBarItem(
-                    icon: Icon(Icons.apps),
+                    icon: Icon(Icons.home_filled),
                     title: Text('Home'),
                     activeColor: Colors.green,
                     inactiveColor: _inactiveColor,
                     textAlign: TextAlign.center,
                   ),
                   BottomNavyBarItem(
-                    icon: Icon(Icons.people),
-                    title: Text('Users'),
+                    icon: Icon(Icons.calendar_today),
+                    title: Text('Calendar'),
                     activeColor: Colors.purpleAccent,
                     inactiveColor: _inactiveColor,
                     textAlign: TextAlign.center,
                   ),
                   BottomNavyBarItem(
-                    icon: Icon(Icons.message),
+                    icon: Icon(Icons.account_balance_wallet_sharp),
                     title: Text(
-                      'Messages ',
+                      'Wallet ',
                     ),
                     activeColor: Colors.pink,
                     inactiveColor: _inactiveColor,
                     textAlign: TextAlign.center,
                   ),
                   BottomNavyBarItem(
-                    icon: Icon(Icons.settings),
-                    title: Text('Settings'),
+                    icon: Icon(Icons.price_change),
+                    title: Text(
+                      'Gold Points ',
+                    ),
+                    activeColor: Colors.yellowAccent,
+                    inactiveColor: _inactiveColor,
+                    textAlign: TextAlign.center,
+                  ),
+                  BottomNavyBarItem(
+                    icon: Icon(Icons.person),
+                    title: Text('Profile'),
                     activeColor: Colors.blue,
                     inactiveColor: _inactiveColor,
                     textAlign: TextAlign.center,

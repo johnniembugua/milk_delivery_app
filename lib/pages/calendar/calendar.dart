@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:milk_delivery/pages/add/add_controller.dart';
+import 'package:milk_delivery/pages/calendar/calendar_controller.dart';
 
-class AddPage extends GetView<AddController> {
+class CalendarPage extends GetView<CalendarController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
