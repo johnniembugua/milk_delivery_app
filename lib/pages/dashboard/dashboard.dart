@@ -65,7 +65,7 @@ class MyDashBoard extends StatelessWidget {
                     title: Text(
                       'Gold Points ',
                     ),
-                    activeColor: Colors.yellowAccent,
+                    activeColor: Colors.purpleAccent,
                     inactiveColor: _inactiveColor,
                     textAlign: TextAlign.center,
                   ),
