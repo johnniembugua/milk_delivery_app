@@ -6,6 +6,7 @@ import 'package:milk_delivery/pages/home/home_controller.dart';
 class HomePage extends GetView<HomePageController> {
   @override
   Widget build(BuildContext context) {
+    TextEditingController textEditingController = TextEditingController();
     return Scaffold(
       backgroundColor: Colors.white24,
       body: Column(
@@ -37,6 +38,7 @@ class HomePage extends GetView<HomePageController> {
             ),
             margin: const EdgeInsets.only(left: 15, right: 15),
             child: TextFormField(
+              controller: textEditingController,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                   border: InputBorder.none,
