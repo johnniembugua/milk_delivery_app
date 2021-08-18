@@ -164,8 +164,8 @@ class HomePage extends GetView<HomePageController> {
             ),
             Container(
               margin: const EdgeInsets.only(left: 15, right: 15),
-              height: 310,
               width: double.infinity,
+              height: 210,
               child: PopularMilk(),
             )
           ],

@@ -16,7 +16,7 @@ class PopularMilk extends StatelessWidget {
                   width: MediaQuery.of(context).size.width - 70,
                   margin: EdgeInsets.only(right: 10),
                   decoration: BoxDecoration(
-                    color: Colors.white38,
+                    color: Colors.white12,
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20.0)),
@@ -25,8 +25,8 @@ class PopularMilk extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
-                        flex: 4,
                         child: Container(
+                          height: 100,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(20.0),
@@ -39,63 +39,74 @@ class PopularMilk extends StatelessWidget {
                         ),
                       ),
                       Expanded(
-                          flex: 2,
                           child: Container(
-                            padding: EdgeInsets.only(left: 15, right: 5),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                        height: 100,
+                        padding: EdgeInsets.only(left: 15, right: 5),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '${controller.products[index].title}',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(fontSize: 14),
+                            ),
+                            Text(
+                              '${controller.products[index].litres} ml 1 L Bottle'
+                                  .toString(),
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.grey),
+                            ),
+                            Text(
+                              'Rating is ${controller.products[index].rating}'
+                                  .toString(),
+                              style: TextStyle(fontSize: 15),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  '${controller.products[index].title}',
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(fontSize: 14),
-                                ),
-                                Text(
-                                  '${controller.products[index].litres} ml 1 L Bottle'
+                                  'Ksh ${controller.products[index].price}'
                                       .toString(),
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.grey),
-                                ),
-                                Text(
-                                  'Rating is ${controller.products[index].rating}'
-                                      .toString(),
-                                  style: TextStyle(fontSize: 15),
+                                  style: TextStyle(fontSize: 16),
                                 ),
                                 Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(
-                                      'Ksh ${controller.products[index].price}'
-                                          .toString(),
-                                      style: TextStyle(fontSize: 16),
-                                    ),
-                                    Row(
-                                      children: [
-                                        TextButton(
-                                            onPressed: () {},
-                                            child: Padding(
-                                              padding: EdgeInsets.all(10),
-                                              child: Text(
+                                    TextButton(
+                                        style: ButtonStyle(
+                                          side: MaterialStateProperty.all(
+                                              BorderSide(
+                                                  width: 1,
+                                                  color: Colors.green)),
+                                          foregroundColor:
+                                              MaterialStateProperty.all(
+                                                  Colors.green),
+                                          textStyle: MaterialStateProperty.all(
+                                              TextStyle(fontSize: 15)),
+                                        ),
+                                        onPressed: () {},
+                                        child: Padding(
+                                            padding: EdgeInsets.all(10),
+                                            child: Row(children: [
+                                              Text(
                                                 'ADD',
                                                 style: TextStyle(
                                                     fontSize: 15,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
-                                            )),
-                                        Icon(Icons.add)
-                                      ],
-                                    )
+                                              Icon(Icons.add),
+                                            ]))),
                                   ],
                                 )
                               ],
-                            ),
-                          ))
+                            )
+                          ],
+                        ),
+                      ))
                     ],
                   ),
                 )));
