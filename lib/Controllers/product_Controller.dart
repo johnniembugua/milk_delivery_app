@@ -11,7 +11,7 @@ class ProductController extends GetxController {
   }
 
   void fetchProducts() async {
-    await Future.delayed(Duration(seconds: 5));
+    await Future.delayed(Duration(seconds: 1));
     var response = [
       Product(
         'assets/images/milk5.png',

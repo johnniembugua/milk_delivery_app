@@ -50,7 +50,8 @@ class PopularMilk extends StatelessWidget {
                               '${controller.products[index].title}',
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: TextStyle(fontSize: 14),
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.bold),
                             ),
                             Text(
                               '${controller.products[index].litres} ml 1 L Bottle'
@@ -88,18 +89,15 @@ class PopularMilk extends StatelessWidget {
                                               TextStyle(fontSize: 15)),
                                         ),
                                         onPressed: () {},
-                                        child: Padding(
-                                            padding: EdgeInsets.all(10),
-                                            child: Row(children: [
-                                              Text(
-                                                'ADD',
-                                                style: TextStyle(
-                                                    fontSize: 15,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              Icon(Icons.add),
-                                            ]))),
+                                        child: Row(children: [
+                                          Text(
+                                            'ADD',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400),
+                                          ),
+                                          Icon(Icons.add),
+                                        ])),
                                   ],
                                 )
                               ],

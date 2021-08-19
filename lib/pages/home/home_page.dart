@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import 'package:milk_delivery/pages/Reusables/custom_text.dart';
 import 'package:milk_delivery/pages/home/home_controller.dart';
+import 'package:milk_delivery/pages/home/widgets/all_milk.dart';
 import 'package:milk_delivery/pages/home/widgets/popular_milk.dart';
 
 class HomePage extends GetView<HomePageController> {
@@ -145,7 +146,19 @@ class HomePage extends GetView<HomePageController> {
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                   ),
                   TextButton(
-                      onPressed: () {},
+                      style: ButtonStyle(
+                        // side: MaterialStateProperty.all(
+                        //     BorderSide(
+                        //         width: 1,
+                        //         color: Colors.green)),
+                        foregroundColor:
+                            MaterialStateProperty.all(Colors.green),
+                        textStyle:
+                            MaterialStateProperty.all(TextStyle(fontSize: 15)),
+                      ),
+                      onPressed: () {
+                        Get.to(() => AllMilk());
+                      },
                       child: Row(
                         children: [
                           Text('See All'),
@@ -167,6 +180,34 @@ class HomePage extends GetView<HomePageController> {
               width: double.infinity,
               height: 210,
               child: PopularMilk(),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 10, right: 10),
+              width: double.infinity,
+              // height: 70,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.blue.shade100,
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.shopping_cart_outlined,
+                    color: Colors.green,
+                  ),
+                  SizedBox(
+                    width: 10.0,
+                  ),
+                  Flexible(
+                    child: Text(
+                      'Order before 2pm and get deiver by 8pm the same day or Order by 12midnight and get deliver by 8 AM the next day',
+                      maxLines: 4,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(color: Colors.green),
+                    ),
+                  )
+                ],
+              ),
             )
           ],
         ),
